@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mortgage Calculator</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Mortgage Calculator</h1>
+    <label>Principal:</label>
+    <input type="number" id="principal">
+    <label>Interest Rate:</label>
+    <input type="number" id="interestRate">
+    <label>Loan Length (Years):</label>
+    <input type="number" id="loanLength">
+    <button onclick="calculateMortgage()" id="calc">Calculate</button>
+    <div id="mortgageResult"></div>
+
+    <button onclick="hello()">click me</button>
+
+
+    <script>
+        function hello() {
+            console.log("Hello there!");
+            alert("Hey!");
+            document.getElementById('calc').innerText = calculateMortgage(); // inner text put text or any var - that will be displayed on click.
+        }
+
+
+
+        function calculateMortgage() {
+            // mortgate M. calculator.
+            let principal = 53000; // loan
+            let interestRate = 0.07625;  // %7.625. // annual interest rate.
+            let loanLength = 15;
+
+            let monthlyPayment = 0;
+            let totalNumOfPayments = 0;
+
+            //calculation for monthly interest rate. (annual interest rate / 12 months).
+            let monthlyInterestRate = interestRate / 12;
+
+            //number of total payments.
+            totalNumOfPayments = 12 * loanLength; // 15 years times 12 months.
+
+            //calculate monthly payment using formula. M = P [ r(1 + r)^n ] / [ (1 + r)^n – 1]
+            let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), totalNumOfPayments);
+            let denumerator = Math.pow((1 + monthlyInterestRate), totalNumOfPayments) - 1;
+
+            monthlyPayment = principal * (numerator / denumerator);
+
+            console.log(`Montly payment is $${monthlyPayment.toFixed(2)} and total interest paid is:`);
+
+            //part two calculate total interest paid.
+            // using formula Total Interest = (M x n) - P
+            let totalInterest = 0;
+
+            totalInterest = (monthlyPayment * totalNumOfPayments) - principal;
+
+            console.log(`Total interest is $${totalInterest.toFixed(2)}`);
+
+        }
+
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
