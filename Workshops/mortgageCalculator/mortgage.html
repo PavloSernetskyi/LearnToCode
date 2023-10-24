@@ -8,31 +8,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS v5.3.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 
-<body>
+<body style="background-image: url('https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbG9yJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');">
     <header>
         <!-- place navbar here -->
     </header>
     <main>
-        <h1>Mortgage Calculator</h1>
-        <label for="principal">Principal</label>
-        <input type="text">
-        
-        <label for="interestRate">Interest Rate</label>
-        <input type="text">
-        <label for="loanLength">Loan Length</label>
-        <input type="text">
+        <div class="container m-5" style="border: 4px solid rgb(134, 13, 13); background-color: rgb(126, 151, 34);" >
+            <div class="row">
+                <!-- col 1 -->
+                <div class="col">
+                    <h1 class="text-center">Mortgage Calculator</h1>
 
-        <button type="button">Calculate</button>
+                    <label for="principal">Principal</label>
+                    <input type="number" id="principal" required minlength="2"><br>
+
+                    <label for="interestRate">Interest Rate %</label>
+                    <input type="number" id="interestRate" required><br>
+
+                    <label for="loanLength">Loan Length</label>
+                    <input type="number" id="loanLength" required><br><br>
+
+                    <button class=" btn btn-primary mb-3" type="button" onclick="calculateMortgage();">Calculate</button>
+
+                    <!-- reset button -->
+                    <a href="mortgage.html"><input class="btn btn-primary mb-3" type="reset" 
+                        value="Reset"></a>
+                    
+                </div>
+
+                <!-- col 2 -->
+                <div class="col">
+                    <p class="h3" id="output"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
     </main>
     <footer>
         <!-- place footer here -->
     </footer>
+
+    <script src="mortgage.js"></script>
+
     <!-- Bootstrap JavaScript Libraries 5.3.2 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
