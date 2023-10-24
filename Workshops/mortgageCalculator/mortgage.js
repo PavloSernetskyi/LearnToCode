@@ -21,8 +21,8 @@ monthlyPayment = principal * (numerator / denumerator);
 
 console.log(`Montly payment is $${monthlyPayment.toFixed(2)} and total interest paid is:`);
 
-//part two calculate total interest paid.
-// using formula Total Interest = (M x n) - P
+// part two calculate total interest paid.
+// using formula: Total Interest = (M x n) - P
 let totalInterest = 0;
 
 totalInterest = (monthlyPayment * totalNumOfPayments) - principal;

@@ -25,3 +25,8 @@ let timeInvestedYears = 5;
 
 let futureValue = principalAmount * Math.pow((1 + annualInterestRateDecimal / timesCompoundedPerYear), (timesCompoundedPerYear * timeInvestedYears));
 
+//A = P(1+r/n)^(nt)
+// example A = 10,000 (1+0.025 / 365) ^ (365*5).
+
+console.log(`The ending balance will be $${futureValue.toFixed(2)}`);
+
