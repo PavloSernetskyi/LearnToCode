@@ -1,0 +1,19 @@
+.container 
+{
+    margin: 30px;
+
+    border: 2px black solid;
+    width: 600px;
+    height: 350px;
+}
+
+button {
+    margin: 10px;
+}
+
+.answer {
+    border: 1px black solid;
+    width: 140px;
+    height: 70px;
+    
+}
