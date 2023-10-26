@@ -3,6 +3,7 @@
 window.onload = init;
 
 function init(){
+    //grab 4 buttons by id so i can click on them. to triger functions.
     //create 4 buttons to click on. and then trigger 4 functions.
     const add = document.getElementById('addBtn');
     const substract = document.getElementById('substractBtn');
