@@ -1,54 +1,23 @@
-//author Justine.
-// "use strict"
+"use strict"
 
-// //TODO Create a function that converts temperature
-
-// // //Declare the current temp
-
-// //Declare the conversion calculation
-// const celsiusTemp = FtoC(fahrenheit);
-
-// //Calculation Function
-// function FtoC(fahrenheit) {
-//     //covert Fahrenheit to celcius
-//     const celsius = Math.round(((fahrenheit - 32) * 5) / 9);
-//     return celsius;
-// }
-
-// FtoC(44);
-
-
-
-
-
-// TODO: Create a function to convert temperature from Fahrenheit to Celsius
-
-/**
- * Converts temperature from Fahrenheit to Celsius
- * @param {number} temperatureInFahrenheit - The temperature in Fahrenheit
- * @return {number} - The converted temperature in Celsius, rounded to the nearest integer
- */
-function convertFahrenheitToCelsius(temperatureInFahrenheit) {
-    const temperatureInCelsius = Math.round((temperatureInFahrenheit - 32) * 5 / 9); //google the conversion formula
-    return temperatureInCelsius; //return: can be used outside of this function
+function convertFahrenheitToCelsius(_fahrenheit){
+    // C = (5/9) * (F - 32)
+    let convertedTempaterue = (5/9) * (_fahrenheit - 32);
+    return convertedTempaterue;
 }
 
-//! Testing to see if the function is working
-// console.log(convertedTemperature);
-const convertedTemperature = convertFahrenheitToCelsius(90);
-// display the convertedTempaterue in console.log
-console.log(convertedTemperature);
+let temperatureConvertedToCelcius = convertFahrenheitToCelsius(100);
 
+console.log(Math.round(temperatureConvertedToCelcius));
 
-//Create an array of the celcius temps
-let fahrenheit = [212, 90, 72 ,32 , 0, -40]
+// convert. 212, 90, 72, 32, 0, -40.
+let temperaturesInF = [212, 90, 72, 32, 0, -40];
 
-for (let index = 0; index < fahrenheit.length; index++) {
+//using for loop to process all temperatures in function.
+//* this for loop displays array of converted temperatures by calling function convert temp and recievs array of temperatures as an arguments.
+for (let index = 0; index < temperaturesInF.length; index++) {
+    const convertedTemp = convertFahrenheitToCelsius(temperaturesInF[index]);
     
-    const convertedTemperature = convertFahrenheitToCelsius(fahrenheit[index]);
-    //Run the function x amount of time, display the convertedTempaterue in console.log
-    console.log(convertedTemperature);
-    
+    console.log("The temperatures are: " + Math.round(convertedTemp));
 }
-
 

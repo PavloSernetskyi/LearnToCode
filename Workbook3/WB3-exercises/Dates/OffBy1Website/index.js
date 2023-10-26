@@ -19,6 +19,3 @@ function displayDate(){
     document.getElementById('output').innerText = message;
 }
 
-function message(){
-    console.log("Hi");
-}
