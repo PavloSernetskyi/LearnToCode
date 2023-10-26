@@ -16,10 +16,16 @@ let name2 = "John Cena";
 // console.log(`Last name: ${lastName}`);
 
 //moving intro function.
+/**
+ *  * expected input single string with first and last name.
+ * This function parses signle string into two pieces thus produces putput as first and last name.
+ * @param {string} x - string argument for the function.
+ * no return value. 
+ */
 function parseAndDisplayName(x){
     //parsing.
-let firstName = name.substring(0,6);
-let lastName = name.substring(6,10);
+let firstName = x.substring(0,6);
+let lastName = x.substring(6,10);
 
 console.log(`First name: ${firstName}`);
 console.log(`Last name: ${lastName}`);
