@@ -1,4 +1,3 @@
-//author Justine.
 // "use strict"
 
 // //TODO Create a function that converts temperature
@@ -35,13 +34,15 @@ function convertFahrenheitToCelsius(temperatureInFahrenheit) {
 
 //! Testing to see if the function is working
 // console.log(convertedTemperature);
-const convertedTemperature = convertFahrenheitToCelsius(90);
+////const convertedTemperature = convertFahrenheitToCelsius(90);
 // display the convertedTempaterue in console.log
-console.log(convertedTemperature);
+//console.log(convertedTemperature);
 
+function DisplayConvertedTemperatures(_listOfTemperatures) {
+    //Create an array of the celcius temps
 
-//Create an array of the celcius temps
-let fahrenheit = [212, 90, 72 ,32 , 0, -40]
+    let fahrenheit = []; // Declaring an empty array this of the type array..
+    fahrenheit = _listOfTemperatures
 
 for (let index = 0; index < fahrenheit.length; index++) {
     
@@ -50,5 +51,9 @@ for (let index = 0; index < fahrenheit.length; index++) {
     console.log(convertedTemperature);
     
 }
+}
 
+DisplayConvertedTemperatures([212, 90, 72 ,32 , 0, -40]);
+DisplayConvertedTemperatures([55, -40]);
 
+//! Create parameters for any value that you want to be dynamic.
