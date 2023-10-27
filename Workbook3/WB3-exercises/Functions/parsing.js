@@ -33,3 +33,9 @@ console.log(`Last name: ${lastName}`);
 
 parseAndDisplayName(name);
 parseAndDisplayName(name2);
+
+
+let myName = "Pavlo Sernetskyi";
+
+console.log("My first name is: " + myName.slice(0,5));
+console.log("My last name is: " + myName.slice(5,16));
