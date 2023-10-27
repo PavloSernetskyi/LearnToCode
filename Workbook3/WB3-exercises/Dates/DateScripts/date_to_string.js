@@ -11,11 +11,11 @@ function init(){
 
 function displayDate(){
     // console.log("Hey");
-    // grab input date from user.
-    let dateInput = document.getElementById('userInp').value;
+    // grab input from user as a date. d = new Date(user inp).
+    let dateInput = new Date(document.getElementById('userInp').value);
 
     // display in 2 steps.
-    let message = (`The date is: ${dateInput}`);
+    let message = (`The date is: ${dateInput.toString()}`);
     document.getElementById('output').innerText = message;
 }
 
