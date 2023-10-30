@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg" style="background-color: palegreen;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><span class="h3">Vacation Resort</span>
+                    <img src="images/log.JPG" alt="" width="40px" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav lead">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"><span
+                                    class="h4">Home</span></a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="overnightCostEstimator.html"><span class="h4">Overnight Stay</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Overnigth Cost Estimator</h1>
+            <label for="name">Name:</label>
+            <input type="text">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email">
+            <br>
+            <label for="date">Check-in date</label>
+            <input type="date">
+            <br>
+            <label for="number-of-nigths">Number of nights for the visit (1-28 days)</label>
+            <input type="number">
+            <br>
+            <!-- radio buttons. -->
+            <label for="room-type">Select a room type</label>
+            <br>
+            <input type="radio" name="queen" id="queen">
+            <label for="queen">Queen</label>
+            <br>
+            <input type="radio" name="king" id="king">
+            <label for="king">King</label>
+            <br>
+            <input type="radio" name="two-bedroom" id="two-bedroom">
+            <label for="two-bedroom">Two-bedroom</label>
+            <br>
+            <!-- num of people -->
+            <label for="adults-number">Number of adults (1-4)</label>
+            <input type="number">
+            <br>
+            <label for="children-number">Number of children (0-4)</label>
+            <input type="number">
+            <br>
+            <!-- discounts -->
+            <label for="discounts">Discounts</label>
+            <br>
+            <input type="radio" name="none" id="none">
+            <label for="none">None</label>
+            <br>
+            <input type="radio" name="aaa-senior" id="aaa-senior">
+            <label for="aaa-senior">AAA/Senior (10%)</label>
+            <br>
+            <input type="radio" name="military" id="military">
+            <label for="military">Military (20%))</label>
+            <br>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="p-3 bg-success text-dark">
+            <p>&copy; 2023 Vacation Resort. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
