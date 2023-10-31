@@ -107,22 +107,24 @@ function calculatePrice() {
     // - the total cost of the stay
 
     //    let message = (`The original room cost $${basePricing}`); 
-    let message2 = (`The month number is ${(month + 1)}`);
-    let message3 = (`The room cost based on 2 parameters: date and bed type and costs: $${(roomRate.toFixed(2))} per day`);
+    //let message2 = (`The month number is ${(month + 1)}`);
+    let message3 = (`The orginal room cost based on the season, bed type and costs: $${(roomRate.toFixed(2))} per day`);
     let message4 = (`The discount is ${(discount.toFixed(2))}`);
-    let message5 = (`The discounted room cost is $${(discountedRoomCost)}`);
+    let message5 = (`The discounted room price per stay cost is $${(discountedRoomCost)}`);
     let message6 = (`The tax is $${(tax.toFixed(2))}`);
     let message7 = (`The total cost of the stay is $${(totalCostOfStay.toFixed(2))}`);
-    let message8 = (`Room price per ${numberOfNigths} days is $${(roomPricePerStay.toFixed(2))}`);
+    //for debuging.
+ //   let message8 = (`Room price per ${numberOfNigths} days is $${(roomPricePerStay.toFixed(2))}`);
 
     //   document.getElementById('output').innerText = message;
-    document.getElementById('output2').innerText = message2;
+//    document.getElementById('output2').innerText = message2;
     document.getElementById('output3').innerText = message3;
     document.getElementById('output4').innerText = message4;
     document.getElementById('output5').innerText = message5;
     document.getElementById('output6').innerText = message6;
     document.getElementById('output7').innerText = message7;
-    document.getElementById('output8').innerText = message8;
+    //for debuging.
+//    document.getElementById('output8').innerText = message8;
 
 }
 
