@@ -45,27 +45,27 @@
         <div class="container">
             <h1>Overnigth Cost Estimator</h1>
             <label for="name">Name:</label>
-            <input type="text">
+            <input type="text" id="customer-name">
             <br>
             <label for="email">Email:</label>
-            <input type="email">
+            <input type="email" id="customer-email">
             <br>
             <label for="date">Check-in date</label>
-            <input type="date">
+            <input type="date" id="check-in-date">
             <br>
             <label for="number-of-nigths">Number of nights for the visit (1-28 days)</label>
-            <input type="number">
+            <input type="number" id="number-of-nights">
             <br>
             <!-- radio buttons. -->
             <label for="room-type">Select a room type</label>
             <br>
-            <input type="radio" name="queen" id="queen">
+            <input type="radio" name="room-type" id="queen" value="queen">
             <label for="queen">Queen</label>
             <br>
-            <input type="radio" name="king" id="king">
+            <input type="radio" name="room-type" id="king" value="king">
             <label for="king">King</label>
             <br>
-            <input type="radio" name="two-bedroom" id="two-bedroom">
+            <input type="radio" name="room-type" id="two-bedroom" value="two-bedroom">
             <label for="two-bedroom">Two-bedroom</label>
             <br>
             <!-- num of people -->
@@ -78,16 +78,24 @@
             <!-- discounts -->
             <label for="discounts">Discounts</label>
             <br>
-            <input type="radio" name="none" id="none">
+            <input type="radio" name="discounts" id="none" value="none">
             <label for="none">None</label>
             <br>
-            <input type="radio" name="aaa-senior" id="aaa-senior">
+            <input type="radio" name="discounts" id="aaa-senior" value="aaa">
             <label for="aaa-senior">AAA/Senior (10%)</label>
             <br>
-            <input type="radio" name="military" id="military">
-            <label for="military">Military (20%))</label>
+            <input type="radio" name="discounts" id="military" value="military">
+            <label for="military">Military (20%)</label>
             <br>
 
+            <button type="button" id="estimate">Estimate stay cost</button>
+            <p id="output"></p>
+            <p id="output2"></p>
+            <p id="output3"></p>
+            <p id="output4"></p>
+            <p id="output5"></p>
+            <p id="output6"></p>
+            <p id="output7"></p>
         </div>
 
     </main>
@@ -97,6 +105,7 @@
         </div>
 
     </footer>
+    <script src="app.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
