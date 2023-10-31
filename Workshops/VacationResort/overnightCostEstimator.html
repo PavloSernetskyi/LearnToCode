@@ -34,7 +34,8 @@
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="overnightCostEstimator.html"><span class="h4">Overnight Stay</span></a>
+                            <a class="nav-link" href="overnightCostEstimator.html"><span class="h4">Overnight
+                                    Stay</span></a>
                         </li>
                     </ul>
                 </div>
@@ -43,52 +44,55 @@
     </header>
     <main>
         <div class="container">
-            <h1>Overnigth Cost Estimator</h1>
-            <label for="name">Name:</label>
-            <input type="text" id="customer-name">
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="customer-email">
-            <br>
-            <label for="date">Check-in date</label>
-            <input type="date" id="check-in-date">
-            <br>
-            <label for="number-of-nigths">Number of nights for the visit (1-28 days)</label>
-            <input type="number" id="number-of-nights">
-            <br>
-            <!-- radio buttons. -->
-            <label for="room-type">Select a room type</label>
-            <br>
-            <input type="radio" name="room-type" id="queen" value="queen">
-            <label for="queen">Queen</label>
-            <br>
-            <input type="radio" name="room-type" id="king" value="king">
-            <label for="king">King</label>
-            <br>
-            <input type="radio" name="room-type" id="two-bedroom" value="two-bedroom">
-            <label for="two-bedroom">Two-bedroom</label>
-            <br>
-            <!-- num of people -->
-            <label for="adults-number">Number of adults (1-4)</label>
-            <input type="number">
-            <br>
-            <label for="children-number">Number of children (0-4)</label>
-            <input type="number">
-            <br>
-            <!-- discounts -->
-            <label for="discounts">Discounts</label>
-            <br>
-            <input type="radio" name="discounts" id="none" value="none">
-            <label for="none">None</label>
-            <br>
-            <input type="radio" name="discounts" id="aaa-senior" value="aaa">
-            <label for="aaa-senior">AAA/Senior (10%)</label>
-            <br>
-            <input type="radio" name="discounts" id="military" value="military">
-            <label for="military">Military (20%)</label>
-            <br>
-
-            <button type="button" id="estimate">Estimate stay cost</button>
+            <!-- form that used within onsubmit event in js. -->
+            <form action="" id="form">
+                <h1>Overnigth Cost Estimator</h1>
+                <label for="name">Name:</label>
+                <input type="text" id="customer-name" required min="2" max="40">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="customer-email" required>
+                <br>
+                <label for="date">Check-in date</label>
+                <input type="date" id="check-in-date" required>
+                <br>
+                <label for="number-of-nigths">Number of nights for the visit (1-28 days)</label>
+                <input type="number" id="number-of-nights" min="1" max="28" required>
+                <br>
+                <!-- radio buttons. -->
+                <label for="room-type">Select a room type</label>
+                <br>
+                <input type="radio" name="room-type" id="queen" value="queen">
+                <label for="queen">Queen</label>
+                <br>
+                <input type="radio" name="room-type" id="king" value="king">
+                <label for="king">King</label>
+                <br>
+                <input type="radio" name="room-type" id="two-bedroom" value="two-bedroom">
+                <label for="two-bedroom">Two-bedroom</label>
+                <br>
+                <!-- num of people -->
+                <label for="adults-number">Number of adults (1-4)</label>
+                <input type="number" min="1" max="4" required>
+                <br>
+                <label for="children-number">Number of children (0-4)</label>
+                <input type="number" min="0" max="4" required>
+                <br>
+                <!-- discounts -->
+                <label for="discounts">Discounts</label>
+                <br>
+                <input type="radio" name="discounts" id="none" value="none">
+                <label for="none">None</label>
+                <br>
+                <input type="radio" name="discounts" id="aaa-senior" value="aaa">
+                <label for="aaa-senior">AAA/Senior (10%)</label>
+                <br>
+                <input type="radio" name="discounts" id="military" value="military">
+                <label for="military">Military (20%)</label>
+                <br>
+                <!-- this button submits form -->
+                <button type="submit">Estimate stay cost</button>
+            </form>
             <p id="output"></p>
             <p id="output2"></p>
             <p id="output3"></p>
@@ -96,6 +100,8 @@
             <p id="output5"></p>
             <p id="output6"></p>
             <p id="output7"></p>
+            <p id="output8"></p>
+
         </div>
 
     </main>

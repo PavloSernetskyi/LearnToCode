@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overnight Cost Estimator Page</title>
+</head>
+<body>
+    <!--Semantic HTML is for SEO purpose and tell search engines like Google how the page has been structure-->
+    <header>
+     <nav>
+
+     </nav>
+    </header>
+    <main>
+        
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="Remsey" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required><br><br>
+            
+            <label for="nights">Number of Nights (1-28):</label>
+            <input type="number" id="nights" name="nights" min="1" max="28" required><br><br>
+            
+            <label>Room Type:</label><br>
+            <input type="radio" id="queen" name="roomtype" value="Queen">
+            <label for="queen">Queen</label><br>
+            
+            <input type="radio" id="king" name="roomtype" value="King">
+            <label for="king">King</label><br>
+            
+            <input type="radio" id="suite" name="roomtype" value="2-Bedroom Suite">
+            <label for="suite">2-Bedroom Suite</label><br><br>
+            
+            <label for="adults">Number of Adults (1-4):</label>
+            <input type="number" id="adults" name="adults" min="1" max="4" required><br><br>
+            
+            <label for="children">Number of Children (0-4):</label>
+            <input type="number" id="children" name="children" min="0" max="4" required><br><br>
+            
+            <label>Discount:</label><br>
+            <input type="radio" id="none" name="discount" value="0">
+            <label for="none">None</label><br>
+            
+            <input type="radio" id="aaa_senior" name="discount" value="10">
+            <label for="aaa_senior">AAA/Senior (10%)</label><br>
+            
+            <input type="radio" id="military" name="discount" value="20">
+            <label for="military">Military (20%)</label><br><br>
+            
+            <input type="submit" value="Submit Reservation">
+
+            <script>
+
+                    //radiobuttons
+                    let selectedRadioButton = document.querySelector('input[name="roomtype"]:checked');
+                    let discountrate =  document.querySelector('input[name="roomtype"]:checked');
+                    //value like King = selectedRadioButton.value;
+
+
+                    // Create a boolean variable that will check if it inSeason or outSeason
+
+
+                    function calculateDiscountRate(days, roomtype) {
+                            // First grab the month from the selected date.
+                           
+                           let checkindate = new Date();
+                           let inSeason = false;
+
+                           let ratepernight;
+                            if(checkinMonth > 6 && checkinMonth < 8) {
+                                inSeason = true
+                            }
+
+
+                            if(inSeason) {
+                                ratepernight  = 250;
+                            }
+
+                            if(roomtype === 'King' || roomtype === 'Queen' & inSeason) {
+                                ratepernight  = 250;
+                            }
+
+
+                         checkindate = document.getElementById('checkin');
+                        let checkinMonth = checkindate.getMonth()
+
+                    }
+
+                <script>
+
+        <form id="signupForm">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" id="firstname">
+    
+    
+            <button type="submit" class="btn btn-primary" id="sendGuestInfoButton">Submit</button>
+        </form>
+        <p id="log">
+            Some output will be displayed here.
+    
+        </p>
+    </main>
+    <footer>
+        
+    </footer>
+   
+    <script src="scripts.js"></script>
+
+
+</body>
+</html>
