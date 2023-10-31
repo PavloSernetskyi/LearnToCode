@@ -78,10 +78,10 @@ function calculatePrice() {
     //storing checked radio button.
     let selectedDicount = selectedRadioButton2.value;
     if (selectedDicount === 'aaa') {
-        discount = roomRate * 0.10;
+        discount = roomPricePerStay * 0.10;
     }
     else if (selectedDicount === 'military') {
-        discount = roomRate * 0.20;
+        discount = roomPricePerStay * 0.20;
     }
 
     else if (selectedDicount === 'none') {
@@ -90,7 +90,7 @@ function calculatePrice() {
 
 
     //discounted room cost.
-    let discountedRoomCost = roomRate - discount;
+    let discountedRoomCost = roomPricePerStay - discount;
     //the tax.
     let tax = discountedRoomCost * 0.12;
     //total cost of the stay.
@@ -108,11 +108,11 @@ function calculatePrice() {
 
     //    let message = (`The original room cost $${basePricing}`); 
     let message2 = (`The month number is ${(month + 1)}`);
-    let message3 = (`The room cost based on 2 parameters: date and bed type and costs: $${(roomRate.toFixed(2))}`);
-    let message4 = (`The discount is ${(discount.toFixed2)}`);
-    let message5 = (`The discounted room cost is ${(discountedRoomCost)}`);
-    let message6 = (`The tax is ${(tax.toFixed(2))}`);
-    let message7 = (`The total cost of the stay is ${(totalCostOfStay.toFixed(2))}`);
+    let message3 = (`The room cost based on 2 parameters: date and bed type and costs: $${(roomRate.toFixed(2))} per day`);
+    let message4 = (`The discount is ${(discount.toFixed(2))}`);
+    let message5 = (`The discounted room cost is $${(discountedRoomCost)}`);
+    let message6 = (`The tax is $${(tax.toFixed(2))}`);
+    let message7 = (`The total cost of the stay is $${(totalCostOfStay.toFixed(2))}`);
     let message8 = (`Room price per ${numberOfNigths} days is $${(roomPricePerStay.toFixed(2))}`);
 
     //   document.getElementById('output').innerText = message;
