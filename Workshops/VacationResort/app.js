@@ -7,7 +7,9 @@ window.onload = function () {
     //using onsubmit event with form through form id.
     form.onsubmit = function (event) {
         event.preventDefault();
+
         calculatePrice();
+
     };
 
     //using onclick event with button,
@@ -20,6 +22,22 @@ window.onload = function () {
     // btn.onclick = calculatePrice;
 };
 
+
+function hideDiscountIfNone() {
+    // target area that I want to hide in output.
+    let hide = document.getElementById('message4');
+    //when user choose none radio button then thwre is no discounts should be on the screen.
+    let radioNone = document.getElementById('none');
+
+    if (radioNone.checked) {
+        // hides if button checked.
+        hide.style.display = "none";
+    }
+    else {
+        //shows text or do no thing if button is NOT checked.
+        hide.style.display = "block";
+    }
+}
 
 function getRoomRate(date, roomType) {
     let nightlyRoomRate = 0;
@@ -76,15 +94,18 @@ function calculatePrice() {
     let discount = 0;
     let selectedRadioButton2 = document.querySelector('input[name="discounts"]:checked');
     //storing checked radio button.
-    let selectedDicount = selectedRadioButton2.value;
-    if (selectedDicount === 'aaa') {
+    let selectedDiscount = selectedRadioButton2.value;
+    //accesing butons by value.
+    if (selectedDiscount === 'aaa') {
         discount = roomPricePerStay * 0.10;
     }
-    else if (selectedDicount === 'military') {
+
+    //! 'military' is att value in radio button in html.
+    else if (selectedDiscount === 'military') {
         discount = roomPricePerStay * 0.20;
     }
-
-    else if (selectedDicount === 'none') {
+    //value none.
+    else if (selectedDiscount === 'none') {
         discount = 0;
     }
 
@@ -108,23 +129,35 @@ function calculatePrice() {
 
     //    let message = (`The original room cost $${basePricing}`); 
     //let message2 = (`The month number is ${(month + 1)}`);
-    let message3 = (`The orginal room cost based on the season, bed type and costs: $${(roomRate.toFixed(2))} per day`);
-    let message4 = (`The discount is ${(discount.toFixed(2))}`);
-    let message5 = (`The discounted room price per stay cost is $${(discountedRoomCost)}`);
-    let message6 = (`The tax is $${(tax.toFixed(2))}`);
-    let message7 = (`The total cost of the stay is $${(totalCostOfStay.toFixed(2))}`);
-    //for debuging.
- //   let message8 = (`Room price per ${numberOfNigths} days is $${(roomPricePerStay.toFixed(2))}`);
+    let message3 = ''
+    if (discount != 0) {
+        message3 =
+            `The orginal room cost based on the season, bed type, and costs: $${(roomRate.toFixed(2))} per day <br>
+    The discount is ${(discount.toFixed(2))} <br>
+    The discounted room price per stay cost is $${(discountedRoomCost)}; <br>
+    The tax is ${tax.toFixed(2)} <br>
+    The total cost of the stay is $${totalCostOfStay.toFixed(2)}`;
+    }
+    else {
+        message3 =
+            `The orginal room cost based on the season, bed type, and costs: $${(roomRate.toFixed(2))} per day <br>
+    The tax is ${tax.toFixed(2)} <br>
+    The total cost of the stay is $${totalCostOfStay.toFixed(2)}`;
+    }
 
-    //   document.getElementById('output').innerText = message;
-//    document.getElementById('output2').innerText = message2;
-    document.getElementById('output3').innerText = message3;
-    document.getElementById('output4').innerText = message4;
-    document.getElementById('output5').innerText = message5;
-    document.getElementById('output6').innerText = message6;
-    document.getElementById('output7').innerText = message7;
-    //for debuging.
-//    document.getElementById('output8').innerText = message8;
 
+    document.getElementById('output3').innerHTML = message3;
 }
+
+
+
+
+//for debuging.
+//   let message8 = (`Room price per ${numberOfNigths} days is $${(roomPricePerStay.toFixed(2))}`);
+
+//   document.getElementById('output').innerText = message;
+//    document.getElementById('output2').innerText = message2;
+
+
+
 

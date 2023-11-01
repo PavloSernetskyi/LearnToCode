@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Text with JavaScript</title>
+</head>
+<body>
+    <h1>Display Text with JavaScript</h1>
+
+    <!-- Example 1: Using innerHTML -->
+    <div>
+        <h2>Using innerHTML:</h2>
+        <p id="result1"></p>
+    </div>
+
+    <!-- Example 2: Using textContent -->
+    <div>
+        <h2>Using textContent:</h2>
+        <p id="result2"></p>
+    </div>
+
+    <!-- Example 3: Using DOM Manipulation -->
+    <div>
+        <h2>Using DOM Manipulation:</h2>
+        <p id="result3"></p>
+    </div>
+
+    <!-- Example 4: Using console.log() -->
+    <div>
+        <h2>Using console.log():</h2>
+        <p>Check the browser's console for the output.</p>
+    </div>
+
+    <!-- Example 5: Using Alert Box -->
+    <div>
+        <h2>Using Alert Box:</h2>
+        <button id="showAlert">Show Alert</button>
+    </div>
+
+    <script>
+        // Your calculateTotalRate function
+        function calculateTotalRate(stayNight, ratePerNight) {
+            const totalCost = stayNight * ratePerNight;
+            return totalCost;
+        }
+
+        // Example 1: Using innerHTML
+        const stayNight1 = 3;
+        const ratePerNight1 = 50;
+        const totalCost1 = calculateTotalRate(stayNight1, ratePerNight1);
+        document.getElementById('result1').innerHTML = `
+        
+        
+        
+        
+        
+        
+        ffff
+        
+        
+        
+        
+        
+       <h2>Total Cost: $${totalCost1} <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <h2>
+            `; //Aad formatting
+
+        // Example 2: Using textContent
+        const stayNight2 = 3;
+        const ratePerNight2 = 50;
+        const totalCost2 = calculateTotalRate(stayNight2, ratePerNight2);
+        document.getElementById('result2').textContent = `Total Cost: $${totalCost2}`;  //plain text
+
+        // Example 3: Using DOM Manipulation
+        const stayNight3 = 3;
+        const ratePerNight3 = 50;
+        const totalCost3 = calculateTotalRate(stayNight3, ratePerNight3);
+
+        
+        ///CREATING User Interface elements using Javascript
+        const resultParagraph = document.createElement('p');
+        resultParagraph.textContent = `Total Cost: $${totalCost3}`;
+        document.getElementById('result3').appendChild(resultParagraph);
+
+        // Example 5: Using Alert Box
+        document.getElementById('showAlert').addEventListener('click', () => {
+            const stayNight5 = 3;
+            const ratePerNight5 = 50;
+            const totalCost5 = calculateTotalRate(stayNight5, ratePerNight5);
+            alert(`Total Cost: $${totalCost5}`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.container-estimator {
+    width: 600px;
+    height: 700px;
+    border: 2px black solid;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 500px;
+    background-color: aliceblue;
+}
+
+.estimator-background {
+background-image: url('');
+}
+
+.index-background {
+    background-image: url('');
+
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Button Text Hider</title>
+</head>
+<body>
+    <h1>Text Hider</h1>
+    <p>Click on the radio button to hide this text.</p>
+
+    <input type="radio" id="hideRadio" name="hideText" onclick="hideText()"> Hide Text
+
+    <p id="hiddenText">This text will be hidden when you check the radio button.</p>
+
+    <script>
+        function hideText() {
+            var radio = document.getElementById("hideRadio");
+            var hiddenText = document.getElementById("hiddenText");
+
+            if (radio.checked) {
+                hiddenText.style.display = "none";
+            } else {
+                hiddenText.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
