@@ -77,8 +77,22 @@ for (let index = 0; index < vehicles.length; index++) {
 }
 // Which vehicles have registrations that are expired?
 for (let index = 0; index < vehicles.length; index++) {
-
-
+    if(vehicles[index].registrationExpires.getFullYear() < 2023)
+    {
+        console.log(`Registration expires on ${vehicles[index].licenseNo}`);
+    }
 }
 // Which vehicles that hold at least 6 people?
+for (let index = 0; index < vehicles.length; index++) {
+    if(vehicles[index].capacity > 5){
+        console.log(`These vehicles hold at least 6 seats ${vehicles[index].licenseNo}`);
+    }
+    
+}
 // Which vehicles have license plates that end with "222"?
+for (let index = 0; index < vehicles.length; index++) {
+    if(vehicles[index].licenseNo.endsWith("222")){
+        console.log(`License plates ends with 222: ${vehicles[index].licenseNo}`);
+    }
+    
+}
