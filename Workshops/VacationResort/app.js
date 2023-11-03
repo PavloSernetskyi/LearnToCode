@@ -23,21 +23,21 @@ window.onload = function () {
 };
 
 
-function hideDiscountIfNone() {
-    // target area that I want to hide in output.
-    let hide = document.getElementById('message4');
-    //when user choose none radio button then thwre is no discounts should be on the screen.
-    let radioNone = document.getElementById('none');
+// function hideDiscountIfNone() {
+//     // target area that I want to hide in output.
+//     let hide = document.getElementById('message4');
+//     //when user choose none radio button then thwre is no discounts should be on the screen.
+//     let radioNone = document.getElementById('none');
 
-    if (radioNone.checked) {
-        // hides if button checked.
-        hide.style.display = "none";
-    }
-    else {
-        //shows text or do no thing if button is NOT checked.
-        hide.style.display = "block";
-    }
-}
+//     if (radioNone.checked) {
+//         // hides if button checked.
+//         hide.style.display = "none";
+//     }
+//     else {
+//         //shows text or do no thing if button is NOT checked.
+//         hide.style.display = "block";
+//     }
+// }
 
 function getRoomRate(date, roomType) {
     let nightlyRoomRate = 0;
@@ -119,17 +119,7 @@ function calculatePrice() {
 
 
     //dipslay output.
-
-    //Desired output:
-    // - the original room cost
-    // - the discount, if any
-    // - the discounted room cost
-    // - the tax
-    // - the total cost of the stay
-
-    //    let message = (`The original room cost $${basePricing}`); 
-    //let message2 = (`The month number is ${(month + 1)}`);
-    let message3 = ''
+    let message3 = '';
     if (discount != 0) {
         message3 =
             `The orginal room cost based on the season, bed type, and costs: $${(roomRate.toFixed(2))} per day <br>
