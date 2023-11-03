@@ -14,11 +14,16 @@ let students = [
 for (let i = 0; i < students.length; i++) {
     console.log(`The students: ${students[i].name}`);
     let sum = 0;
+    //display each array of scores. simple.
+    console.log("Individual array: " + students[i].scores);
+    //this inner loop steps through array of scores. and sumps up each aray of scores. and stores them in sum array.
     for (let j = 0; j < students[i].scores.length; j++) {
         sum = sum + students[i].scores[j];
     }
+    console.log("Sum of each individual array of scores: " + sum);
+    //calculate average of each
     let average = sum / students[i].scores.length;
-    console.log(`Avergae: ${average.toFixed(2)}`);
+    console.log(`Avergae: ${average.toFixed(2)}\n`);
 
 }
-
+//console.log(students[3].scores[0]); // 98.

@@ -69,17 +69,16 @@ let vehicles = [
 
 
 // Which vehicles are RED?
+// Which vehicles are RED?
 for (let index = 0; index < vehicles.length; index++) {
-    if(vehicles[index].color.includes("Red"))
-    {
-        console.log(`Red vehicles are: ${vehicles[index].licenseNo}`);
+    if (vehicles[index].color.toLowerCase().includes("red")) { // Convert both to lower case
+        console.log(`${vehicles[index].color} vehicles are: ${vehicles[index].licenseNo}`);
     }
-    
 }
 // Which vehicles have registrations that are expired?
 for (let index = 0; index < vehicles.length; index++) {
 
-    
+
 }
 // Which vehicles that hold at least 6 people?
 // Which vehicles have license plates that end with "222"?
