@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Activities</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="text-center mt-4">Tourist Activities</h1>
+    <div class="container mt-4">
+        <div class="row" id="activityList"></div>
+    </div>
+
+    <script>
+        const touristActivities = [
+            {
+                name: 'Hiking Adventure',
+                description: 'Explore scenic trails and enjoy the beauty of nature.',
+                id: 1,
+                price: 49.99,
+                maxParticipants: 20,
+                isAvailable: true,
+                requiresBooking: false,
+                location: {
+                    city: 'Mountain Town',
+                    country: 'Adventureland',
+                },
+                guide: {
+                    name: 'John Doe',
+                    age: 35,
+                },
+                photos: ['hiking1.jpg', 'hiking2.jpg', 'hiking3.jpg'],
+                ratings: [4.5, 4.7, 4.2, 4.8],
+                features: ['Scenic Views', 'Nature Photography', 'Picnic Spot'],
+                specialOffer: null,
+                discountCode: undefined,
+            },
+        ];
+
+        const activityList = document.getElementById('activityList');
+
+        touristActivities.forEach(activity => {
+            const activityDiv = document.createElement('div');
+            activityDiv.className = 'col-md-4';
+
+            const card = document.createElement('div');
+            card.className = 'card mb-4';
+
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            const nameHeader = document.createElement('h5');
+            nameHeader.className = 'card-title';
+            nameHeader.textContent = activity.name;
+
+            cardBody.appendChild(nameHeader);
+
+            for (const key in activity) {
+                if (key !== 'name') {
+                    const value = activity[key];
+                    if (value !== undefined) {
+                        const info = document.createElement('p');
+                        info.innerHTML = `<strong>${key}:</strong> ${Array.isArray(value) ? value.join(', ') : value}`;
+                        cardBody.appendChild(info);
+                    }
+                }
+            }
+
+            card.appendChild(cardBody);
+            activityDiv.appendChild(card);
+            activityList.appendChild(activityDiv);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

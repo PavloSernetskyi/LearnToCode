@@ -57,3 +57,39 @@ displayEmployee(emp2);
 // }
 // let data = passObj(emp1);
 // console.log("Whole object" + data);
+
+let activities = [ {
+    price: 300,
+    name: "Adventures",
+    location: "Yosemite Park",
+    startDate: ["11/6/2023","5/4/2023","12/8/2023"],
+    activityLength: 10,
+    description: "Explore nature and waterfalls."
+},
+{
+    price: 25,
+    name: "Museums",
+    location: "Museum Of Modern Arts",
+    startDate: ["1/2/2023","3/2/2023","11/3/2023"],
+    activityLength: 4,
+    description: "Apreciate the modern art"
+},
+{
+    price: 40,
+    name: "Wine Tastings",
+    location: "Castello di Amorosa",
+    startDate: ["2/2/2023","1/1/2023","10/8/2023"],
+    activityLength: 2,
+    description: "Visit on of the greates castles in California and taste some of the finest wines."
+},
+
+]
+
+// Update the price of the first activity
+activities[0].price = 55.0;
+
+// Add a new date to the startDate array of the first activity
+activities[0].startDate.push(new Date(2023, 10, 13));
+
+
+

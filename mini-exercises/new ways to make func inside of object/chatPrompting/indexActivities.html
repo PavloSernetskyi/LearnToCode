@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourist Activities</title>
+    <style>
+        .activity {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        .activity h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tourist Activities</h1>
+    <div id="activityList"></div>
+
+    <script>
+        const activities = [
+            {
+                price: 300,
+                name: "Adventures",
+                location: "Yosemite Park",
+                startDate: ["11/6/2023", "5/4/2023", "12/8/2023"],
+                activityLength: 10,
+                description: "Explore nature and waterfalls."
+            },
+            {
+                price: 25,
+                name: "Museums",
+                location: "Museum Of Modern Arts",
+                startDate: ["1/2/2023", "3/2/2023", "11/3/2023"],
+                activityLength: 4,
+                description: "Appreciate modern art"
+            },
+            {
+                price: 40,
+                name: "Wine Tastings",
+                location: "Castello di Amorosa",
+                startDate: ["2/2/2023", "1/1/2023", "10/8/2023"],
+                activityLength: 2,
+                description: "Visit one of the greatest castles in California and taste some of the finest wines."
+            },
+        ];
+
+        const activityList = document.getElementById('activityList');
+
+        activities.forEach(activity => {
+            const activityDiv = document.createElement('div');
+            activityDiv.className = 'activity';
+
+            const nameHeader = document.createElement('h2');
+            nameHeader.textContent = activity.name;
+            activityDiv.appendChild(nameHeader);
+
+            for (const key in activity) {
+                const value = activity[key];
+                if (Array.isArray(value)) {
+                    const info = document.createElement('p');
+                    info.innerHTML = `<strong>${key}:</strong> ${value.join(', ')}`;
+                    activityDiv.appendChild(info);
+                } else if (key !== 'name') {
+                    const info = document.createElement('p');
+                    info.innerHTML = `<strong>${key}:</strong> ${value}`;
+                    activityDiv.appendChild(info);
+                }
+            }
+
+            activityList.appendChild(activityDiv);
+        });
+    </script>
+</body>
+</html>
