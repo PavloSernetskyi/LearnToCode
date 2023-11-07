@@ -11,8 +11,6 @@ let products = [
     { product: "KitKat", price: 1.39 },
     { product: "Gummy Bears", price: 2.79 },
     { product: "Sour Patch", price: 10.44 },
-    // TODO: fill the array with 10 candies of various
-    // price ranges
 ];
 
 // Which candies costs less than $4.00?
