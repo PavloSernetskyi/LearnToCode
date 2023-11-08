@@ -40,9 +40,21 @@ let courses = [
 
 
 // When does the PROG200 course start?
-console.log(`The course ${courses[1].CourseId} starts on ${courses[1].StartDate}`);
+for (let index = 0; index < courses.length; index++) {
+    if (courses[index].CourseId == "PROJ500") {
+        console.log(`${courses[index].StartDate}`);
+    }
+}
+
+
 // What is the title of the PROJ500 course?
-console.log(`The title of ${courses[4].CourseId} is ${courses[4].Title}`);
+for (let index = 0; index < courses.length; index++) {
+    if(courses[index].CourseId == "PROJ500"){
+        console.log(`${courses[index].Title}`);
+    }
+}
+
+
 
 // interate through courses array.
 for (let i = 0; i < courses.length; i++) {
