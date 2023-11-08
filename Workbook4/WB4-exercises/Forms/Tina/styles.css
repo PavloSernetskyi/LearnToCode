@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mainBody {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.select {
+    display:flex;
+    justify-content: space-evenly;
+}
+p {
+    text-align: center;
+}

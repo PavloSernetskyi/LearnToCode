@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="statesList">
+    </select>
+
+    <script>
+        "use strict"
+        
+        window.onload = function () {
+            loadStatesDropdownListIntoHTML();
+
+        }
+
+        // load the dropdown list function.
+        function loadStatesDropdownListIntoHTML() {
+            // load the dropdown list
+            let states = ["Alabama", "Alaska", "Arizona"];
+            let abbrev = ["AL", "AK", "AZ"];
+            const statesList = document.getElementById("statesList");
+            let length = states.length;
+            for (let i = 0; i < length; i++) {
+                // create the option element
+                let theOption = document.createElement("option");
+                // set the text and value of the option you created
+                theOption.textContent = states[i];
+                theOption.value = abbrev[i];
+                // append the option as a child of (inside) the
+                // select element
+                statesList.appendChild(theOption);
+            }
+        } // end of loadDropdownListIntoHTML function.
+
+        //other functions.
+
+
+    </script>
+
+</body>
+
+
+
+</html>
