@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+select {
+    padding: 5px;
+}
+
+#menu-items {
+    margin-top: 20px;
+    font-weight: bold;
+}

@@ -54,8 +54,6 @@ function select(event) {
     event.preventDefault();  // needed for onsubmit even and form.
 
     const statesList = document.getElementById("teamsList");
-    //    if (statesList.selectedIndex >= 0) {
-   // console.log(statesList);
 
    //TODO acronyms used to use in for loop to search through array of objects.
     let selectedValue = statesList.value;
@@ -72,10 +70,7 @@ function select(event) {
                 that plays for ${(teams[index].plays)}
                 `
         }
-
     }
-    //          let innerText = document.querySelector('#teamList option:select').innerText;
-
     document.getElementById('output').innerHTML = message;
     //   }
 }
