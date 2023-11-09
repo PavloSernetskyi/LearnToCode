@@ -35,9 +35,11 @@ filteredItems.forEach(displayItemOutput);
 function getSum(currentTotal, arrayValue) {
     // adds the array value to the accumulated total
 
+    //sums up up total prices in array of objects.
     return currentTotal + (arrayValue.price * arrayValue.quantity);
 }
 
+// reduce method with 2 param. (func and initial sum value 0.)
 let sum = cart.reduce(getSum, 0);
 // sum contains 60.82
 console.log(`The total sum is ${sum}`);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart Total</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .cart-item {
+      margin-bottom: 10px;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Shopping Cart Items</h2>
+
+  <div id="cart-items">
+    <!-- Cart items will be added here dynamically -->
+  </div>
+
+  <div class="total">
+    Total: $<span id="cart-total">0.00</span>
+  </div>
+
+  <script>
+    // Your cartItems array
+    const cartItems = [
+      { product: 'Book', price: 9.99, quantity: 2 },
+      { product: 'Laptop', price: 799.99, quantity: 1 },
+      { product: 'Pencil', price: 0.99, quantity: 10 }
+    ];
+
+    cartItems.push({ product: 'Phone', price: 999.99, quantity: 10 })
+    // Function to display cart items on the page
+    function displayCartItems(items) {
+      const cartItemsContainer = document.getElementById('cart-items');
+
+      items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.textContent = `${item.quantity} x ${item.product} - $${(item.price * item.quantity).toFixed(2)}`;
+        cartItemsContainer.appendChild(itemElement);
+      });
+    }
+
+    // Calculate cart total
+    const cartTotal = cartItems.reduce((total, item) => {
+      return total + (item.price * item.quantity);
+    }, 0);
+
+    // Display cart total on the page
+    document.getElementById('cart-total').textContent = cartTotal.toFixed(2);
+
+    // Display cart items on the page
+    displayCartItems(cartItems);
+  </script>
+
+</body>
+
+</html>
