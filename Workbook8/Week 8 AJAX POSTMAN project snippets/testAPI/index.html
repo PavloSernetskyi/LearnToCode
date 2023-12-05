@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Display</title>
+</head>
+<body>
+
+<h1>Choose a City</h1>
+
+<!-- Dropdown menu -->
+<select id="cityDropdown">
+  <option value="">Select a city</option>
+</select>
+
+<button onclick="getTemperature()">Get Temperature</button>
+
+<h2>Temperature Display</h2>
+<p id="temperature"></p>
+
+<script>
+  var cities = [
+    {
+      name: "Benbrook, TX",
+      latitude: 32.6732,
+      longitude: -97.4606
+    },
+    {
+      name: "Denver, CO",
+      latitude: 39.737411,
+      longitude: -104.986288
+    },
+    {
+      name: "Castro Valley, CA",
+      latitude: 37.695045,
+      longitude: -122.073471
+    },
+    {
+      name: "Santa Rosa, CA",
+      latitude: 38.436328,
+      longitude: -122.708698
+    },
+  ];
+
+  // Populate dropdown menu with city names
+  var dropdown = document.getElementById("cityDropdown");
+  cities.forEach(city => {
+    var option = document.createElement("option");
+    option.value = `${city.latitude},${city.longitude}`;
+    option.text = city.name;
+    dropdown.add(option);
+  });
+
+  function getTemperature() {
+    var selectedCity = dropdown.value;
+    if (!selectedCity) {
+      alert("Please select a city");
+      return;
+    }
+
+    var [latitude, longitude] = selectedCity.split(",");
+    var apiURL = `https://api.weather.gov/points/${latitude},${longitude}/forecast`;
+
+    fetch(apiURL)
+      .then(response => response.json())
+      .then(data => {
+        const temperature = data.properties.periods[0].temperature;
+        document.getElementById("temperature").innerText = `Temperature in ${dropdown.options[dropdown.selectedIndex].text}: ${temperature} °F`;
+      })
+      .catch(error => console.log('error', error));
+  }
+</script>
+
+</body>
+</html>
