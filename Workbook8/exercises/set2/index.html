@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Submission Form</title>
+</head>
+
+<body>
+    <form id="courseForm">
+        <h2>Course Submission Form</h2>
+        <input type="hidden" id="id" value="1">
+        <label for="dept">Department:</label>
+        <input type="text" id="dept" name="dept" value="CompSci"><br><br>
+        <label for="courseNum">Course Number:</label>
+        <input type="number" id="courseNum" name="courseNum" value="101"><br><br>
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" value="HTML5 and CSS3"><br><br>
+        <label for="instructor">Instructor:</label>
+        <input type="text" id="instructor" name="instructor" value="Rob"><br><br>
+        <label for="startDate">Start Date:</label>
+        <input type="text" id="startDate" name="startDate" value="July 8"><br><br>
+        <label for="numDays">Number of Days:</label>
+        <input type="number" id="numDays" name="numDays" value="10"><br><br>
+        <button type="submit">Submit</button>
+        <!-- <div id="output"></div> -->
+        
+    </form>
+
+        <h2>Delete course</h2>
+        <label for="delete">delete course by ID</label>
+        <input type="number" id="userInputForDELETE">
+        <button onclick="deleteCourseByID()">Delete</button>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('courseForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const data = {
+                id: document.getElementById('id').value,
+                dept: document.getElementById('dept').value,
+                courseNum: document.getElementById('courseNum').value,
+                courseName: document.getElementById('courseName').value,
+                instructor: document.getElementById('instructor').value,
+                startDate: document.getElementById('startDate').value,
+                numDays: document.getElementById('numDays').value
+            };
+
+            fetch('http://localhost:8081/api/courses', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // alert('Success:', data);
+                    alert('Success:', displayData(data));
+                })
+                .catch((error) => {
+                    alert('Error:', error);
+                });
+
+
+            //use DELETE to delete objects.
+
+
+
+
+        });
+
+        function displayData(data) {
+            alert("The following data was submitted: " + data.dept);
+            // document.getElementById('output').innerHTML = data.courseName;
+        }
+
+
+
+        function deleteCourseByID(){
+            var requestOptions = {
+            method: 'DELETE',
+            redirect: 'follow'
+        };
+
+        let courseID = document.getElementById("userInputForDELETE").value;
+
+        // for (let index = 19; index < 38; index++) {
+        //     courseID = index;
+            fetch(`http://localhost:8081/api/courses/${courseID}`, requestOptions)
+            .then(response => response.text())
+            .then(result => alert("You just deleted course with ID: " + courseID))
+            .catch(error => console.log('error', error));
+
+        }
+        // }
+
+        // let linkURL = "http://localhost:8081/api/courses/";
+        // let endpoint = userID;
+
+       
+        
+
+    </script>
+</body>
+
+</html>
