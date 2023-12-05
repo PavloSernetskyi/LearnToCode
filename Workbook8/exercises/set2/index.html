@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Submission Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,85 +27,23 @@
         <input type="number" id="numDays" name="numDays" value="10"><br><br>
         <button type="submit">Submit</button>
         <!-- <div id="output"></div> -->
-        
+
     </form>
 
-        <h2>Delete course</h2>
-        <label for="delete">delete course by ID</label>
-        <input type="number" id="userInputForDELETE">
-        <button onclick="deleteCourseByID()">Delete</button>
+    <h2>Delete course</h2>
+    <label for="delete">Delete course by ID</label>
+    <input type="number" id="userInputForDELETE">
+    <button onclick="deleteCourseByID()">Delete</button>
 
-    <script>
-        // JavaScript to handle form submission
-        document.getElementById('courseForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const data = {
-                id: document.getElementById('id').value,
-                dept: document.getElementById('dept').value,
-                courseNum: document.getElementById('courseNum').value,
-                courseName: document.getElementById('courseName').value,
-                instructor: document.getElementById('instructor').value,
-                startDate: document.getElementById('startDate').value,
-                numDays: document.getElementById('numDays').value
-            };
-
-            fetch('http://localhost:8081/api/courses', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // alert('Success:', data);
-                    alert('Success:', displayData(data));
-                })
-                .catch((error) => {
-                    alert('Error:', error);
-                });
+    <h2>Display all courses in a table</h2>
+    <table id="tableOutput" class="table"></table>
 
 
-            //use DELETE to delete objects.
+    <script src="displayCourses.js"></script>
 
-
-
-
-        });
-
-        function displayData(data) {
-            alert("The following data was submitted: " + data.dept);
-            // document.getElementById('output').innerHTML = data.courseName;
-        }
-
-
-
-        function deleteCourseByID(){
-            var requestOptions = {
-            method: 'DELETE',
-            redirect: 'follow'
-        };
-
-        let courseID = document.getElementById("userInputForDELETE").value;
-
-        // for (let index = 19; index < 38; index++) {
-        //     courseID = index;
-            fetch(`http://localhost:8081/api/courses/${courseID}`, requestOptions)
-            .then(response => response.text())
-            .then(result => alert("You just deleted course with ID: " + courseID))
-            .catch(error => console.log('error', error));
-
-        }
-        // }
-
-        // let linkURL = "http://localhost:8081/api/courses/";
-        // let endpoint = userID;
-
-       
-        
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
