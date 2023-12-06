@@ -21,13 +21,18 @@
     <body>
         <header>
             <!-- place navbar here -->
+            <ul>
+                <li><a href="new_todo.html">New Task</a></li>
+                <li><a href="todos.html">View Tasks</a></li>
+       
+              </ul>
         </header>
         <main>
-            <h1>To Do Project</h1>
+            <h2>Choose user from dropdown to view tasks.</h2>
             <label for="dropdown"></label>
             <select name="dropdown" id="displayUsersList"></select>
             <!-- view tasks for each user. -->
-            <button onclick="viewTasks()">View Tasks</button>
+            <button onclick="fetchAndThenDisplayTasks()">View ToDo Tasks</button>
             <div id="tasks"></div>
         </main>
         <footer>

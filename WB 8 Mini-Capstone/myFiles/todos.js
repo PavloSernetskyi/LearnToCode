@@ -1,17 +1,26 @@
 "use strict"
 
+window.onload = init();
+
+function init(){
+    fetchDropdownUsers();
+   
+}
+
 //Fetch users names data from back end JSON file using GET request in postman, and display them in HTML in dropdown menu.
+function fetchDropdownUsers(){
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    
+    
+    fetch("http://localhost:8083/api/users ", requestOptions)
+        .then(response => response.json())
+        .then(result => displayUsersInDropdownMenu(result))
+        .catch(error => console.log('error', error));
 
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-};
-
-fetch("http://localhost:8083/api/users ", requestOptions)
-    .then(response => response.json())
-    .then(result => displayUsersInDropdownMenu(result))
-    .catch(error => console.log('error', error));
-
+}
 
 function displayUsersInDropdownMenu(result) {
     const dropdown = document.getElementById('displayUsersList');
@@ -27,7 +36,7 @@ function displayUsersInDropdownMenu(result) {
 }
 
 //TODO Load tasks.. then display tasks for specific user.
-function viewTasks() {
+function fetchAndThenDisplayTasks() {
     //storing id based on what element is choosen in dropdown.
     let selectedIdBasedOnUser = document.getElementById('displayUsersList').value;
 
