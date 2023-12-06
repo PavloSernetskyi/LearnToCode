@@ -5,11 +5,11 @@ window.onload = (event) => {
     fetchDataIntoTableToShowAllCourses();
     addNewDataToTheTable()
 
-    alert("refreshing page");
+//    alert("refreshing page");
 
 };
 
-//TODO Adding new data section.
+//TODO Adding new data section. POST request
 function addNewDataToTheTable() {
     // JavaScript to handle form submission
     document.getElementById('courseForm').addEventListener('submit', function (e) {
@@ -48,7 +48,7 @@ function displayData(data) {
     // document.getElementById('output').innerHTML = data.courseName;
 }
 
-//TODO Dispalying all courses section. fetching then dispalying.
+//TODO Dispalying all courses section. fetching then dispalying. GET request
 function fetchDataIntoTableToShowAllCourses() {
     //This function fethes data using GET request and then call another fucntin to display all data.
     var requestOptions = {
@@ -84,7 +84,7 @@ function showAllCourses(result) {
     });
 }
 
-//TODO Delete coures by ID section.
+//TODO Delete coures by ID section. DELETE request.
 function deleteCourseByID() {
     var requestOptions = {
         method: 'DELETE',
