@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+</head>
+<body>
+    
+  <div id="message">
+
+  </div>
+</body>
+
+<script>
+
+    function DisplayData() {
+     const nameRetrieved = localStorage.getItem("name");
+     const roleRetrieved = localStorage.getItem("role");
+     let message = `Welkom ${roleRetrieved} ${nameRetrieved}`; 
+     document.getElementById('message').innerHTML = message;
+    }
+    DisplayData();
+</script>
+</html>

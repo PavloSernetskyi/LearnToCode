@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        
+        <label>Select Role:</label><br>
+        <input type="radio" id="student" name="role" value="Student">
+        <label for="student">Student</label><br>
+        
+        <input type="radio" id="teacher" name="role" value="Teacher">
+        <label for="teacher">Teacher</label><br><br>
+        
+        <input type="button" value="Submit" onclick="getData()">
+    </form>
+</body>
+<script src="app.js"></script>
+</html>
