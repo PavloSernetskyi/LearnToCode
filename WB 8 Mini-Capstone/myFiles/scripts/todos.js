@@ -2,19 +2,19 @@
 
 window.onload = init();
 
-function init(){
+function init() {
     fetchDropdownUsers();
-   
+
 }
 
 //Fetch users names data from back end JSON file using GET request in postman, and display them in HTML in dropdown menu.
-function fetchDropdownUsers(){
+function fetchDropdownUsers() {
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
-    
-    
+
+
     fetch("http://localhost:8083/api/users ", requestOptions)
         .then(response => response.json())
         .then(result => displayUsersInDropdownMenu(result))
@@ -60,11 +60,20 @@ function displayTasks(result) {
     document.getElementById('tasks').innerHTML = "";
     result.forEach(user => {
         let message = `      
-            Category: ${user.category}
-            Description: ${user.description}
-            Deadline: ${user.deadline}
-            Priority: ${user.priority}
-            Completed: ${user.completed} <br> <br>
+        <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Priority</th>
+            <th>Completed</th>
+        </tr>
+        <tr>
+            <td>${user.category}</td>
+            <td>${user.description}</td>
+            <td>${user.deadline}</td>
+            <td>${user.priority}</td>
+            <td>${user.completed} <br> <br> </td>
+        </tr>
         `
         document.getElementById('tasks').innerHTML += message;
 
