@@ -245,6 +245,32 @@ app.delete('/api/todos/:id', function (req, res) {
     res.status(200).send();
 })
 */
+// DELETE a specific course
+app.delete("/api/todos/:id", function (req, res) {
+    let id = req.params.id;
+    console.log("LOG: Got a DELETE request for course " + id);
+
+    let data = fs.readFileSync(__dirname + "/data/" + "todos.json", "utf8");
+    data = JSON.parse(data);
+
+    // Find the course
+    let matchingIndex = data.findIndex(c => c.id == id);
+
+    // If course found, delete it
+    if (matchingIndex >= 0) {
+        // LOG data for tracing
+        console.log("LOG: Course deleted was -> ");
+        console.log(data[matchingIndex]);
+
+        data.splice(matchingIndex, 1);
+        fs.writeFileSync(__dirname + "/data/" + "todos.json", JSON.stringify(data));
+    }
+
+    // Note:  not found is not an error, because the goal is
+    //        for it to be gone!
+
+    res.status(200).send();
+})
 
 // POST a new user
 app.post("/api/users", urlencodedParser, function (req, res) {
